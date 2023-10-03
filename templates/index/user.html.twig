@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Employé{% endblock %}
+
+{% block body %}
+
+<div class="blog-article header-article">
+    <div class="blog-big__title">{{ user.firstname }} {{ user.lastname }}</div>
+    <div class="blog-menu small-title date">{{ user.email }}</div>
+   </div>
+   <div class="blog-article">
+    <img src="{{ user.image }}" alt="">
+    <h2>Lorem ipsum dolo <span> sit amet</span> consectetur adipisicing elit.</h2>
+    <div class="blog-detail">
+     <span>{{ user.job }}</span>
+     <span>{{ user.contract }}</span>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam officiis ea omnis cumque beatae? Quibusdam rerum, qui eveniet non, fuga provident voluptate ut nulla. <hr> <br> Inscrit depuis : {{ user.releaseDate|date('d.m.Y') }}</p>
+    <div class="btn-svg-user">
+    
+
+
+
+{% endblock %}

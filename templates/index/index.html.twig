@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+
+
+  <div class="blog-article page-number">
+
+  </div>
+ </div>
+ <div class="blog-header-container">
+  <div class="blog-header">
+    {% for user in users %}
+   <div class="blog-article header-article">
+    <div class="blog-big__title">{{ user.firstname }} {{ user.lastname }}</div>
+    <div class="blog-menu small-title date">{{ user.email }}</div>
+   </div>
+   <div class="blog-article">
+    <img src="{{ user.image }}" alt="">
+    <h2>Lorem ipsum dolo <span> sit amet</span> consectetur adipisicing elit.</h2>
+    <div class="blog-detail">
+     <span>{{ user.job }}</span>
+     <span>{{ user.contract }}</span>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam officiis ea omnis cumque beatae? Quibusdam rerum, qui eveniet non, fuga provident voluptate ut nulla. <hr> <br> Inscrit depuis : {{ user.releaseDate|date('d.m.Y') }}</p>
+    <div class="btn-svg-user">
+    <a href="" class="btn-svg">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-down-right" viewBox="0 0 24 24">
+
+    </svg>
+    <a href="{{ path('app_index_user', {'id': user.id}) }}" class="btn-svg">
+        <button>VOIR PLUS</button>
+    </a>
+
+
+    </div>
+   </div>
+   {% endfor %}
+  </div>
+</div>
+  
+ <div class="blog-part right-blog">
+  <marquee width="100%" direction="left">
+   <span>Pour modifier un user -> btn voir plus</span>
+   <span>Pour voir la liste des employés -> btn employés</span>
+   <span>Pour inscrire un user -> btn inscription</span>
+  </marquee>
+  <div class="blog-right-title-container">
+   <div class="blog-right-title">
+    Historique d'inscription
+   </div>
+  </div>
+  <div class="blog-right">
+   <div class="blog-right-container">
+    <div class="blog-title-date">
+     <div class="date"></div>
+    </div>
+    <div class="blog-right-page-title"></div>
+    <div class="blog-right-page-subtitle"></div>
+   </div>
+  </div>
+ </div>
+</div>
+{% endblock %}
